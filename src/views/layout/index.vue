@@ -6,13 +6,13 @@
       <actionsheet :menus="menus" v-model="showMenus" @on-click-menu="logoutHandle()" show-cancel></actionsheet>
     </div>
     <tabbar style="position:fixed">
-      <tabbar-item link="/layout/message" selected>
+      <tabbar-item @on-item-click="goPath('/layout/message')" selected>
         <span slot="label">Message</span>
       </tabbar-item>
-      <tabbar-item link="/layout/goods">
+      <tabbar-item @on-item-click="goPath('/layout/goods')">
         <span slot="label">Goods</span>
       </tabbar-item>
-      <tabbar-item link="/layout/news">
+      <tabbar-item @on-item-click="goPath('/layout/news')">
         <span slot="label">News</span>
       </tabbar-item>
     </tabbar>
@@ -47,8 +47,13 @@ export default {
     }
   },
   methods: {
-        doAction () {
-            console.log(11);
+        goPath (path) {
+          let token = this.$cookie.get('token')
+          if (!token || !/\S/.test(token)) {
+            this.$router.push('/')
+          }else{
+            this.$router.push(path)
+          }
         },
         logoutHandle () {
             API.common.logout().then(({data}) => {

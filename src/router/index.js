@@ -6,6 +6,13 @@ const _import = require('./import-' + process.env.NODE_ENV)
 
 const router =  new Router({
   // mode: 'history',
+  beforeEach: function (to, from, next) {
+    let token = Vue.cookie.get('token')
+    if (!token || !/\S/.test(token)) {
+      next('/')
+    }
+    next()
+  },
   routes: [
     { path: '/', redirect: { name: 'login' } },
     { path: '/login', component: _import('login/index'), name: 'login', desc: '登录' },
@@ -24,12 +31,18 @@ const router =  new Router({
       beforeEnter(to, from, next) {
         let token = Vue.cookie.get('token')
         if (!token || !/\S/.test(token)) {
-          next({ name: 'login' })
+          next('/')
         }
         next()
       }
     }
   ]
 })
-
+// router.beforeResolve ((to, from, next) => {
+//   let token = Vue.cookie.get('token')
+//   if (!token || !/\S/.test(token)) {
+//     next({ path: '/' })
+//   }
+//   next()
+// })
 export default router
