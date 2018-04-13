@@ -65,7 +65,7 @@
           console.log(data);
           if (data && data.code === 0) {
             this.$cookie.set('token', data.token, { expires: `${data.expire || 0}s` })
-            this.$router.replace({ name: 'hello' })
+            this.$router.replace({ name: 'layout' })
           } else {
             this.getCaptcha()
             this.$message.error(data.msg)

@@ -3,18 +3,22 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 const _import = require('./import-' + process.env.NODE_ENV)
-export default new Router({
+
+const router =  new Router({
+  // mode: 'history',
   routes: [
+    { path: '/', redirect: { name: 'login' } },
     { path: '/login', component: _import('login/index'), name: 'login', desc: '登录' },
     {
-      path: '/',
+      path: '/layout',
       component: _import('layout/index'),
       name: 'layout',
-      redirect: { name: 'hello' },
-      desc: '上左右整体布局',
+      redirect: { name: 'message' },
       children: [
-        { path: '/hello', component: _import('hello/index'), name: 'hello', desc: 'hello' },
-        { path: '/goods', component: _import('goods/index'), name: 'goods', desc: 'goods' }
+        { path: 'hello', component: _import('hello/index'), name: 'hello', desc: 'hello' },
+        { path: 'message', component: _import('message/index'), name: 'message', desc: 'message' },
+        { path: 'news', component: _import('news/index'), name: 'news', desc: 'news' },
+        { path: 'goods', component: _import('goods/index'), name: 'goods', desc: 'goods' }
       ],
       //如果 token 为空 重定向至 登录页面
       beforeEnter(to, from, next) {
@@ -25,15 +29,7 @@ export default new Router({
         next()
       }
     }
-    // {
-    //   path: '/',
-    //   name: 'HelloFromVux',
-    //   component: HelloFromVux
-    // },
-    // {
-    //   path: '/hello',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // }
   ]
 })
+
+export default router

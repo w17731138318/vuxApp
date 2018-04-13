@@ -6,13 +6,13 @@
       <actionsheet :menus="menus" v-model="showMenus" @on-click-menu="logoutHandle()" show-cancel></actionsheet>
     </div>
     <tabbar style="position:fixed">
-      <tabbar-item link="/message" selected>
+      <tabbar-item link="/layout/message" selected>
         <span slot="label">Message</span>
       </tabbar-item>
-      <tabbar-item link="/goods">
+      <tabbar-item link="/layout/goods">
         <span slot="label">Goods</span>
       </tabbar-item>
-      <tabbar-item link="/news">
+      <tabbar-item link="/layout/news">
         <span slot="label">News</span>
       </tabbar-item>
     </tabbar>
