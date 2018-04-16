@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>vuxapp</title>
-<% if (process.env.NODE_ENV === 'production') { %>
+  <% if (process.env.NODE_ENV === 'production') { %>
   <!-- 生产环境 -->
   <script src="./config/index.js?h=<%=compilation.hash%>"></script>
   <% }else { %>
