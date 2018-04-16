@@ -14,7 +14,7 @@ var env = ''; // 环境
     version = (d.getFullYear().toString().slice(2))
         + ((d.getMonth() + 1) >= 10 ? (d.getMonth() + 1) : '0' + (d.getMonth() + 1))
         + (d.getDate() >= 10 ? d.getDate() : '0' + d.getDate())
-    versionPath = distPath + '/' + version
+    versionPath = distPath + '/dist'
 })()
 
 // 编译
