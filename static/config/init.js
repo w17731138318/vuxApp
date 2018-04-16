@@ -15,16 +15,6 @@
     ]
   };
 
-  // 图标
-  (function () {
-    document.getElementsByTagName('html')[0].style.opacity = 0;
-    var _icon = document.createElement('link');
-    _icon.setAttribute('rel', 'shortcut icon');
-    _icon.setAttribute('type', 'image/x-icon');
-    _icon.setAttribute('href', resList.icon);
-      document.getElementsByTagName('head')[0].appendChild(_icon);
-  })();
-
   // 样式
   (function () {
     document.getElementsByTagName('html')[0].style.opacity = 0;
