@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'app'
+    name: 'app'
 }
 </script>
 
@@ -14,6 +14,6 @@ export default {
 @import '~vux/src/styles/reset.less';
 
 body {
-  background-color: #fbf9fe;
+    background-color: #fbf9fe;
 }
 </style>
