@@ -9,11 +9,12 @@ import { isAuth } from '@/utils'
 import VueCookie from 'vue-cookie'
 
 Vue.use(VueCookie)
+Vue.config.productionTip = false
 FastClick.attach(document.body)
 Vue.config.productionTip = false
-
+Vue.prototype.isAuth = isAuth
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app-box')

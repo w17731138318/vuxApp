@@ -10,14 +10,14 @@ import * as goods from './modules/goods'
 import * as bottle from './modules/bottle'
 
 export default {
-  common,     // 公共
-  user,       // 管理员管理
-  role,       // 角色管理
-  menu,       // 菜单管理
-  log,        // 系统日志
-  config,     // 参数管理
-  oss,        // 文件服务
-  schedule,    // 定时任务
-  goods,    // 商品
-  bottle    // 单个商品
+    common,     // 公共
+    user,       // 管理员管理
+    role,       // 角色管理
+    menu,       // 菜单管理
+    log,        // 系统日志
+    config,     // 参数管理
+    oss,        // 文件服务
+    schedule,    // 定时任务
+    goods,    // 商品
+    bottle    // 单个商品
 }

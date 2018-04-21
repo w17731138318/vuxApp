@@ -11,11 +11,11 @@ import merge from 'lodash/merge'
  *  form: 'application/x-www-form-urlencoded; charset=utf-8'
  */
 export default function (params, requestType = 'post', openDefultParams = true, contentType = 'json') {
-  // 默认参数
-  var defaults = {
-    't': new Date().getTime()
-  }
-  params = openDefultParams ? merge(defaults, params) : params
-  params = requestType === 'post' ? (contentType === 'json' ? JSON.stringify(params) : qs.stringify(params)) : params
-  return params
+    // 默认参数
+    var defaults = {
+        't': new Date().getTime()
+    }
+    params = openDefultParams ? merge(defaults, params) : params
+    params = requestType === 'post' ? (contentType === 'json' ? JSON.stringify(params) : qs.stringify(params)) : params
+    return params
 }
